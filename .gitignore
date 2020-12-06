@@ -1,0 +1,13 @@
+/.gradle/*
+/.idea/*
+**/out/*
+**/build/*
+**/*.iml
+/documents/*.pdb
+hs_err_pid*
+/logs/*
+
+/documents/keystore/private.key
+/documents/keystore/public.pem
+/documents/keystore/rg-esia-key.p12
+/catalina.base_IS_UNDEFINED/
