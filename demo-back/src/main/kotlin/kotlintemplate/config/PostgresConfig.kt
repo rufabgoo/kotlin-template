@@ -24,21 +24,11 @@ import javax.sql.DataSource
 @EnableTransactionManagement
 class PostgresConfig(private val propertyConfig: PropertyConfig) : AbstractR2dbcConfiguration() {
 
-    private val connectionFactoryOptions: ConnectionFactoryOptions by lazy {
-        ConnectionFactoryOptions.parse(propertyConfig.dbUrl)
-                .mutate()
-                .option(ConnectionFactoryOptions.DRIVER, "pool")
-                .option(ConnectionFactoryOptions.PROTOCOL, "postgresql")
-                .option(ConnectionFactoryOptions.USER, propertyConfig.dbUsername)
-                .option(ConnectionFactoryOptions.PASSWORD, propertyConfig.dbPassword)
-                .build()
-    }
-
     @Bean
     override fun connectionFactory(): PostgresqlConnectionFactory {
         return PostgresqlConnectionFactory(PostgresqlConnectionConfiguration
                 .builder()
-                .host("localhost")
+                .host("demo-postgresql")
                 .username(propertyConfig.dbUsername)
                 .password(propertyConfig.dbPassword)
                 .port(5432)
