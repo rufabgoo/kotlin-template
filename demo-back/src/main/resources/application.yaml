@@ -7,9 +7,12 @@ spring:
       poolName: hikari-cp
       maxLifetime: 2000000
       connectionTimeout: 30000
-
-  spring:
-    r2dbc:
-      url: r2dbc:postgresql://localhost/demo
-      username: admin
-      password: admin
+  r2dbc:
+    url: r2dbc:postgresql://localhost/demo
+    username: admin
+    password: admin
+#  spring:
+#    r2dbc:
+#      url: r2dbc:postgresql://localhost/demo
+#      username: admin
+#      password: admin

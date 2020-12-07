@@ -90,12 +90,12 @@ subprojects {
 			dependency("org.springframework:spring-jcl:${property("springVersion")}")
 			dependency("org.springframework.data:spring-data-commons:${property("springDataVersion")}")
 			dependency("org.springframework.data:spring-data-jpa:${property("springDataVersion")}")
-//			dependency("org.springframework.data:spring-data-r2dbc:${property("springDataR2dbcVersion")}")
+			dependency("org.springframework.data:spring-data-r2dbc:${property("springDataR2dbcVersion")}")
+			dependency("org.postgresql:postgresql:${property("postgresql")}")
 
 			dependency("org.springframework.boot:spring-boot:${property("springBootVersion")}")
 			dependency("org.springframework.boot:spring-boot-starter:${property("springBootVersion")}")
 			dependency("org.springframework.boot:spring-boot-starter-data-jpa:${property("springBootVersion")}")
-			dependency("org.springframework.boot:spring-boot-starter-data-redis-reactive:${property("springBootVersion")}")
 			dependency("org.springframework.boot:spring-boot-starter-web:${property("springBootVersion")}")
 			dependency("org.springframework.boot:spring-boot-starter-webflux:${property("springBootVersion")}")
 			dependency("org.springframework.boot:spring-boot-starter-jdbc:${property("springBootVersion")}")
@@ -114,6 +114,8 @@ subprojects {
 
 			dependency("org.liquibase:liquibase-core:${property("liquibaseVersion")}")
 			dependency("io.r2dbc:r2dbc-pool:${property("r2dbcPoolVersion")}")
+			dependency("io.r2dbc:r2dbc-postgresql:${property("r2dbcPostgresVersion")}")
+
 			dependency("io.lettuce:lettuce-core:${property("lettuceVersion")}")
 
 			dependency("javax.activation:javax.activation-api:${property("javaxActivationVersion")}")
@@ -157,16 +159,10 @@ subprojects {
 			dependency("org.jetbrains.kotlinx:kotlinx-coroutines-test:${property("kotlinTestVersion")}")
 			dependency("com.nhaarman.mockitokotlin2:mockito-kotlin:${property("mockitoKotlinVersion")}")
 
-			dependency("org.projectlombok:lombok:${property("lombokVersion")}")
-			dependency("com.github.docker-java:docker-java:${property("dockerClientVersion")}")
 
 			imports {
 				mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
 			}
-
-			dependency("io.qameta.allure:allure-java-commons:${property("allureVersion")}")
-			dependency("io.qameta.allure:allure-junit-platform:${property("allureVersion")}")
-			dependency("io.qameta.allure:allure-junit5:${property("allureVersion")}")
 		}
 	}
 }

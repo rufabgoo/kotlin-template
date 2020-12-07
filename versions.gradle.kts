@@ -18,6 +18,7 @@ extra.apply {
     set("javaxValidationVersion", "2.0.1.Final")
     set("hibernateValidatorVersion", "6.0.17.Final")
     set("r2dbcPoolVersion", "0.8.3.RELEASE")
+    set("r2dbcPostgresVersion", "0.8.6.RELEASE")
     set("lettuceVersion", "5.2.2.RELEASE")
     set("slf4jVersion", "1.7.26")
     set("logbackVersion", "1.2.3")
@@ -55,7 +56,5 @@ extra.apply {
     set("kotlinTestVersion", "1.3.5")
     set("mockitoKotlinVersion", "2.2.0")
 
-    set("allureVersion", "2.13.5")
-    set("lombokVersion", "1.18.12")
-    set("dockerClientVersion", "3.0.14")
+    set("postgresql", "42.2.18")
 }

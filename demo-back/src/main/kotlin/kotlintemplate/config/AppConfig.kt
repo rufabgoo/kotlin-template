@@ -14,27 +14,19 @@ import javax.sql.DataSource
 @Configuration
 class AppConfig {
 
-    @Bean
-    fun dataSourceWrapper(): BeanPostProcessor = RetryableDataSourceBeanPostProcessor()
-
-    @Order(Ordered.HIGHEST_PRECEDENCE)
-    private class RetryableDataSourceBeanPostProcessor : BeanPostProcessor {
-        @Throws(BeansException::class)
-        override fun postProcessBeforeInitialization(bean: Any, beanName: String): Any? {
-            return HikariRetryableDataSource(bean as DataSource)
-        }
-
-        @Throws(BeansException::class)
-        override fun postProcessAfterInitialization(bean: Any, beanName: String): Any? {
-            return bean
-        }
-    }
-
-    @Bean
-    fun messageSource(): ResourceBundleMessageSource {
-        val messageSource = ResourceBundleMessageSource()
-        messageSource.setBasename("messages")
-        messageSource.setDefaultEncoding("UTF-8")
-        return messageSource
-    }
+//    @Bean
+//    fun dataSourceWrapper(): BeanPostProcessor = RetryableDataSourceBeanPostProcessor()
+//
+//    @Order(Ordered.HIGHEST_PRECEDENCE)
+//    private class RetryableDataSourceBeanPostProcessor : BeanPostProcessor {
+//        @Throws(BeansException::class)
+//        override fun postProcessBeforeInitialization(bean: Any, beanName: String): Any? {
+//            return HikariRetryableDataSource(bean as HikariDataSource)
+//        }
+//
+//        @Throws(BeansException::class)
+//        override fun postProcessAfterInitialization(bean: Any, beanName: String): Any? {
+//            return bean
+//        }
+//    }
 }

@@ -40,12 +40,13 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
-    implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
     implementation("org.springframework:spring-jdbc")
     implementation("org.springframework.retry:spring-retry")
-
     implementation("org.springframework.data:spring-data-r2dbc")
     implementation("io.r2dbc:r2dbc-pool")
+    implementation("io.r2dbc:r2dbc-postgresql")
+    implementation("org.springframework.data:spring-data-r2dbc")
+
     implementation("org.apache.commons:commons-pool2")
 
     implementation("io.projectreactor:reactor-core")
