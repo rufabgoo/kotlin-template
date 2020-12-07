@@ -1,15 +1,14 @@
 version: '2.2'
 services:
 
-
   postgresql:
-    container_name: wap-postgresql
+    container_name: demo-postgresql
     image: postgres:9.6.14
     hostname: postgresql
     environment:
-      POSTGRES_USER: wapuser
-      POSTGRES_PASSWORD: wapuser
-      POSTGRES_DB: wapdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: demo
     ports:
       - 5432:5432
     healthcheck:
@@ -17,11 +16,11 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    volumes:
-      - wap-postgresql-data:/var/lib/postgresql/data
+#    volumes:
+#      - wap-postgresql-data:/var/lib/postgresql/data
     mem_limit: 512m
 
-  matching-back:
+  demo-back:
     container_name: demo-back
     build: demo-back
     image: demo-back
@@ -38,45 +37,6 @@ services:
     depends_on:
       postgresql:
         condition: service_healthy
-      mysql:
-        condition: service_healthy
-      clickhouse:
-        condition: service_started
-      redis:
-        condition: service_started
-      kafka:
-        condition: service_started
-      vsftpd:
-        condition: service_started
-      syslog:
-        condition: service_started
-      mailhog:
-        condition: service_started
-
-  matching-calc:
-    image: matching-calc
-    container_name: matching-calc
-    build: matching-calc
-    ports:
-      - 8003:8003
-    environment:
-      TZ: Europe/Moscow
-      SPRING_PROFILES_ACTIVE: docker
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8003/actuator/health" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-    depends_on:
-      matching-config:
-        condition: service_healthy
-      redis:
-        condition: service_started
-      kafka:
-        condition: service_started
-      syslog:
-        condition: service_started
-
 
 
 #volumes:
