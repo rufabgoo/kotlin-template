@@ -1,10 +1,6 @@
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 group = "kotlin-template"
-version = rootProject.version
-
-val artifactBaseName = "demo-back"
-val artifactVersion = "$version"
 
 plugins {
     id("org.springframework.boot")
@@ -12,19 +8,6 @@ plugins {
     kotlin("plugin.spring")
     distribution
     `maven-publish`
-}
-
-springBoot {
-    buildInfo {
-        properties {
-            name = artifactBaseName
-        }
-    }
-}
-
-tasks.named<BootJar>("bootJar") {
-    archiveBaseName.set(artifactBaseName)
-    archiveVersion.set(artifactVersion)
 }
 
 dependencies {

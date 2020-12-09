@@ -7,10 +7,11 @@ RUN set -eux; \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
-COPY build/app/ /app/
+COPY build/libs/demo-back.jar /app/
+COPY enterypoint.sh /app/
 
-EXPOSE 8001
+EXPOSE 8080
 
 WORKDIR /app/
 
-ENTRYPOINT ["/app/bin/app.sh", "start"]
+ENTRYPOINT ["/app/enterypoint.sh", "start"]
