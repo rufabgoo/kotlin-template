@@ -158,6 +158,7 @@ subprojects {
 			dependency("io.projectreactor:reactor-test:${property("reactorVersion")}")
 			dependency("org.jetbrains.kotlinx:kotlinx-coroutines-test:${property("kotlinTestVersion")}")
 			dependency("com.nhaarman.mockitokotlin2:mockito-kotlin:${property("mockitoKotlinVersion")}")
+			dependency("javax.persistence:javax.persistence-api:${property("javaxPersistenceVersion")}")
 
 
 			imports {

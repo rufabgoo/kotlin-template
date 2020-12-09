@@ -46,6 +46,7 @@ dependencies {
     implementation("io.r2dbc:r2dbc-pool")
     implementation("io.r2dbc:r2dbc-postgresql")
     implementation("org.springframework.data:spring-data-r2dbc")
+    implementation("javax.persistence:javax.persistence-api")
 
     implementation("org.apache.commons:commons-pool2")
 

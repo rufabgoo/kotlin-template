@@ -57,4 +57,5 @@ extra.apply {
     set("mockitoKotlinVersion", "2.2.0")
 
     set("postgresql", "42.2.18")
+    set("javaxPersistenceVersion", "2.2")
 }

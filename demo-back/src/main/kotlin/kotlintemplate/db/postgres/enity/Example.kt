@@ -4,12 +4,13 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.Table
 
-@Table("example")
-class Example(
+@Table("example.example_test")
+data class Example(
+
         @Id
         @Column("id")
-        val id: Long,
+        var id: Long,
 
         @Column("name")
-        val name: String
+        var name: String
 )

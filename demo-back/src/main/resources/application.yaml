@@ -8,9 +8,9 @@ spring:
       maxLifetime: 2000000
       connectionTimeout: 30000
   r2dbc:
-    url: r2dbc:postgresql://demo-postgresql/demo
-    username: admin
-    password: admin
+    url: r2dbc:postgresql://localhost/demo
+    username: root
+    password: root
 #  spring:
 #    r2dbc:
 #      url: r2dbc:postgresql://localhost/demo
