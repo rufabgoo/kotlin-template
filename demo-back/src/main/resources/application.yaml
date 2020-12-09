@@ -1,12 +1,4 @@
 spring:
-  datasource:
-    hikari:
-      minimumIdle: 5
-      maximumPoolSize: 20
-      idleTimeout: 30000
-      poolName: hikari-cp
-      maxLifetime: 2000000
-      connectionTimeout: 30000
   r2dbc:
     url: r2dbc:postgresql://demo-postgresql/demo
     username: root
